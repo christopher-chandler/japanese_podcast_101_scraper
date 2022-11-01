@@ -2,6 +2,7 @@ import csv
 import glob
 import os
 import bs4
+from utils.prog import update_progress
 
 def data_prep():
     open("mp3_text/episode_results.csv", mode="w+")
@@ -47,6 +48,8 @@ def download_audio(session, save_type, save_name, audio,tags):
             c = 0
             for entry in audio:
                 c += 1
+
+                update_progress(c/len(audio))
                 audio_file = session.get(audio.get(entry))
                 res_name = f"{save_type}_{save_name}_{c}"
                 save = open(f"mp3_files/{save_type}_{save_name}_{c}.mp3", mode="wb")

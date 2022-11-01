@@ -1,0 +1,199 @@
+.mejsill__offscreen { clip: rect(1px, 1px, 1px, 1px); -webkit-clip-path: polygon(0 0, 0 0, 0 0, 0 0); clip-path: polygon(0 0, 0 0, 0 0, 0 0); position: absolute !important; height: 1px; width: 1px; overflow: hidden; }
+.mejsill__container { position: relative; background: transparent; font-family: Helvetica, Arial, serif; text-align: left; vertical-align: top; text-indent: 0; box-sizing: border-box; }
+.mejsill__container.locked,
+.mejsill__container.locked [role=button],
+.mejsill__container.locked button,
+.mejsill__container.locked div { cursor: not-allowed; }
+.mejsill__container * { box-sizing: border-box; }
+.mejsill__container video::-webkit-media-controls-start-playback-button { display: none !important; -webkit-appearance: none; }
+.mejsill__fill-container,
+.mejsill__fill-container .mejsill__container { width: 100%; height: 100%; }
+.mejsill__fill-container { overflow: hidden; position: relative; margin: 0 auto; background: transparent; }
+.mejsill__container:focus { outline: none; }
+.me-plugin { position: absolute; }
+.mejsill__embed,
+.mejsill__embed body { width: 100%; height: 100%; margin: 0; padding: 0; background: #000; overflow: hidden; }
+.mejsill__fullscreen { overflow: hidden !important; }
+.mejsill__container-fullscreen { position: fixed; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: 2; }
+.mejsill__container-fullscreen .mejsill__mediaelement,
+.mejsill__container-fullscreen video { width: 100% !important; height: 100% !important; }
+.mejsill__clear { clear: both; }
+.mejsill__background,
+.mejsill__mediaelement { position: absolute; top: 0; left: 0; }
+.mejsill__mediaelement { width: 100%; height: 100%; }
+.mejsill__poster { position: absolute; top: 0; left: 0; background-size: contain; background-position: 50% 50%; background-repeat: no-repeat; }
+:root .mejsill__poster-img { display: none; }
+.mejsill__poster-img { border: 0; padding: 0; }
+.mejsill__overlay { position: absolute; top: 0; left: 0; }
+.mejsill__overlay-play { cursor: pointer; }
+.mejsill__overlay-button { position: absolute; top: 50%; left: 50%; width: 58px; height: 58px; margin: -29px 0 0 -29px; overflow: hidden; display: inline-block; border-radius: 50%; border: 3px solid #fff; background: rgba(0, 0, 0, 0.1); }
+.mejsill__overlay-button::after { position: absolute; top: 15px; left: 22px; display: inline-block; content: ""; width: 0; height: 0; border-style: solid; border-width: 11px 0 11px 13px; border-color: transparent transparent transparent #fff; z-index: 1; }
+.mejsill__overlay:hover > .mejsill__overlay-button { background: rgba(0, 0, 0, 0.05); }
+.mejsill__overlay-loading { position: absolute; top: 50%; left: 50%; width: 80px; height: 80px; margin: -40px 0 0 -40px; }
+.mejsill__overlay-loading-bg-img { display: block; width: 80px; height: 80px; background: transparent url(ill-controls.svg?v=04052017) 0 -250px no-repeat; animation: a 1s linear infinite; }
+@keyframes a { to { transform: rotate(1turn); } }
+.mejsill__controls { position: absolute; list-style-type: none; margin: 0; padding: 0 20px; bottom: 0; left: 0; height: 50px; width: 100%; }
+.mejsill__controls:not([style*="display: none"]) { background: transparent; }
+.mejsill__button,
+.mejsill__time,
+.mejsill__time-rail { float: left; margin: 0; width: 32px; height: 50px; font-size: 10px; line-height: 10px; }
+.mejsill__button { margin-right: 7px; }
+.mejsill__button:last-of-type { margin-right: 0; }
+.mejsill__button > a,
+.mejsill__button > button { cursor: pointer; display: block; font-size: 0; line-height: 0; text-decoration: none; margin: 13px 4px; padding: 0; position: absolute; height: 25px; width: 25px; border: 0; background: transparent url(ill-controls.svg?v=04052017); overflow: hidden; }
+.mejsill__duration-container { margin-right: 22px; }
+.mejsill__android .mejsill__duration-container,
+.mejsill__iphone .mejsill__duration-container { margin-right: 0; }
+.mejsill__button > button:focus { outline: 1px dotted #999; }
+.mejsill__container-keyboard-inactive [role=slider],
+.mejsill__container-keyboard-inactive [role=slider]:focus,
+.mejsill__container-keyboard-inactive a,
+.mejsill__container-keyboard-inactive a:focus,
+.mejsill__container-keyboard-inactive button,
+.mejsill__container-keyboard-inactive button:focus { outline: 0; }
+.mejsill__time { color: #fff; display: block; height: 25px; width: auto; font-weight: 400; font-size: 11px; padding: 19px 6px 0; overflow: hidden; text-align: center; box-sizing: content-box; }
+.mejsill__playpause-button { margin-right: 37px; }
+.mejsill__android .mejsill__playpause-button,
+.mejsill__iphone .mejsill__playpause-button { margin-right: 0; }
+.mejsill__play > a,
+.mejsill__play > button,
+.mejsill__replay > a,
+.mejsill__replay > button { background: transparent; }
+.mejsill__play > a::after,
+.mejsill__play > button::after,
+.mejsill__replay > a::after,
+.mejsill__replay > button::after { position: absolute; top: 0; left: 2px; display: inline-block; content: ""; width: 0; height: 0; border-style: solid; border-width: 12px 0 12px 20px; border-color: transparent transparent transparent #fff; }
+.mejsill__pause > a,
+.mejsill__pause > button,
+.mejsill__replay > a,
+.mejsill__replay > button { background: transparent; }
+.mejsill__pause > a::before,
+.mejsill__pause > button::before,
+.mejsill__replay > a::before,
+.mejsill__replay > button::before { position: absolute; top: 0; left: 4px; display: inline-block; content: ""; width: 7px; height: 25px; background: #fff; z-index: 1; }
+.mejsill__pause > a::after,
+.mejsill__pause > button::after,
+.mejsill__replay > a::after,
+.mejsill__replay > button::after { position: absolute; top: 0; left: 13px; display: inline-block; content: ""; width: 7px; height: 25px; background: #fff; z-index: 1; }
+.mejsill__time-rail { direction: ltr; width: 125px; padding-top: 15px; height: 50px; position: relative; margin: 0 5px; }
+.mejsill__time-buffering,
+.mejsill__time-current,
+.mejsill__time-float,
+.mejsill__time-float-corner,
+.mejsill__time-float-current,
+.mejsill__time-handle,
+.mejsill__time-loaded,
+.mejsill__time-marker,
+.mejsill__time-total { cursor: pointer; display: block; position: absolute; height: 6px; border-radius: 0; }
+.mejsill__time-total { margin: 6px 0 0; background: #768db9; width: 100%; }
+.mejsill__time-buffering { width: 100%; background: linear-gradient(-45deg, hsla(0, 0%, 100%, 0.15) 25%, transparent 0, transparent 50%, hsla(0, 0%, 100%, 0.15) 0, hsla(0, 0%, 100%, 0.15) 75%, transparent 0, transparent); background-size: 15px 15px; animation: b 2s linear infinite; }
+@keyframes b {
+  0% { background-position: 0 0; }
+  to { background-position: 30px 0; }
+}
+.mejsill__time-loaded { background: #596b8a; width: 0; }
+.mejsill__time-current { background: #28e7f7; width: 0; }
+.mejsill__time-handle { margin: 0; width: 10px; background: #fff; border-radius: 5px; cursor: pointer; border: 2px solid #333; top: -2px; }
+.mejsill__time-float,
+.mejsill__time-handle { display: none; position: absolute; text-align: center; }
+.mejsill__time-float { background: #eee; width: 36px; height: 17px; border: 1px solid #333; top: -26px; margin-left: -18px; color: #111; }
+.mejsill__time-float-current { margin: 2px; width: 30px; display: block; text-align: center; left: 0; }
+.mejsill__time-float-corner { position: absolute; display: block; width: 0; height: 0; line-height: 0; border: 5px solid #eee; border-color: #eee transparent transparent; border-radius: 0; top: 15px; left: 13px; }
+.mejsill__long-video .mejsill__time-float { width: 48px; }
+.mejsill__long-video .mejsill__time-float-current { width: 44px; }
+.mejsill__long-video .mejsill__time-float-corner { left: 18px; }
+.mejsill__broadcast { color: #fff; position: absolute; width: 100%; height: 10px; top: 15px; }
+.mejsill__fullscreen-button > a,
+.mejsill__fullscreen-button > button { background-position: 0 -75px; }
+.mejsill__unfullscreen > a,
+.mejsill__unfullscreen > button { background-position: 0 -100px; }
+.mejsill__mute > button { background-position: 0 -330px; }
+.mejsill__unmute > button { background-position: 0 -355px; }
+.mejsill__volume-button { position: relative; margin-right: 0; }
+.mejsill__volume-button > .mejsill__volume-slider { display: none; height: 115px; width: 25px; background: rgba(50, 50, 50, 0.7); border-radius: 0; top: -115px; left: 5px; z-index: 1; position: absolute; margin: 0; }
+.mejsill__volume-button:hover { border-radius: 0 0 4px 4px; }
+.mejsill__volume-total { position: absolute; left: 11px; top: 8px; width: 2px; height: 100px; background: hsla(0, 0%, 100%, 0.5); margin: 0; }
+.mejsill__volume-current { bottom: 0; width: 100%; height: 100%; margin: 0; }
+.mejsill__volume-current,
+.mejsill__volume-handle { position: absolute; left: 0; background: hsla(0, 0%, 100%, 0.9); }
+.mejsill__volume-handle { bottom: 100%; width: 16px; height: 6px; margin: 0 0 -3px -7px; cursor: ns-resize; border-radius: 1px; }
+.mejsill__horizontal-volume-slider { height: 36px; width: 56px; position: relative; display: block; float: left; vertical-align: middle; }
+.mejsill__horizontal-volume-total { top: 16px; width: 50px; height: 8px; background: rgba(50, 50, 50, 0.8); }
+.mejsill__horizontal-volume-current,
+.mejsill__horizontal-volume-total { position: absolute; left: 0; margin: 0; padding: 0; font-size: 1px; border-radius: 2px; }
+.mejsill__horizontal-volume-current { top: 0; width: 100%; height: 100%; background: hsla(0, 0%, 100%, 0.8); }
+.mejsill__horizontal-volume-handle { display: none; }
+.mejsill__ill-volume-slider { height: 50px; width: 52px; position: relative; display: block; float: left; vertical-align: middle; margin-right: 21px; }
+.mejsill__ill-volume-total { position: absolute; left: 0; top: 15px; width: 46px; height: 16px; margin: 0; padding: 0; font-size: 1px; border-radius: 0; background: transparent; }
+.mejsill__ill-volume-bg { border-color: transparent transparent #768db9; }
+.mejsill__ill-volume-bg,
+.mejsill__ill-volume-current { position: absolute; width: 0; height: 0; line-height: 0; border-style: solid; border-width: 0 0 16px 46px; }
+.mejsill__ill-volume-current { left: 0; top: 0; clip: rect(0, 46px, 46px, 0); border-color: transparent transparent #28e7f7; }
+.mejsill__captions-button { position: relative; }
+.mejsill__captions-button > a,
+.mejsill__captions-button > button { background-position: 0 0; }
+.mejsill__captions-enabled > a,
+.mejsill__captions-enabled > button { background-position: 0 -25px; }
+.mejsill__captions-button > .mejsill__captions-selector { visibility: hidden; position: absolute; bottom: 40px; right: -51px; width: 85px; background: rgba(50, 50, 50, 0.7); border: 1px solid transparent; padding: 0; overflow: hidden; border-radius: 0; visibility: visible; }
+.mejsill__captions-selector-list { margin: 0; padding: 0; display: block; list-style-type: none !important; overflow: hidden; }
+.mejsill__captions-selector-list-item { margin: 0 0 6px; padding: 0 10px; list-style-type: none !important; display: block; color: #fff; overflow: hidden; cursor: pointer; }
+.mejsill__captions-selector-list-item:hover { background-color: #c8c8c8 !important; background-color: hsla(0, 0%, 100%, 0.4) !important; }
+.mejsill__captions-selector-input { clear: both; float: left; margin: 3px 3px 0 5px; position: absolute; left: -1000px; }
+.mejsill__captions-selector-label { width: 55px; float: left; padding: 4px 0 0; line-height: 15px; font-size: 10px; cursor: pointer; }
+.mejsill__captions-selected { color: #21f8f8; }
+.mejsill__captions-translations { font-size: 10px; margin: 0 0 5px; }
+.mejsill__chapters { position: absolute; top: 0; left: 0; border-right: 1px solid #fff; width: 10000px; z-index: 1; }
+.mejsill__chapter { position: absolute; float: left; background: rgba(0, 0, 0, 0.7); background: linear-gradient(rgba(50, 50, 50, 0.7), rgba(0, 0, 0, 0.7)); overflow: hidden; border: 0; }
+.mejsill__chapter-block { font-size: 11px; color: #fff; padding: 5px; display: block; border-right: 1px solid #333; border-bottom: 1px solid #333; cursor: pointer; }
+.mejsill__chapter-block-last { border-right: none; }
+.mejsill__chapter-block:hover { background: hsla(0, 0%, 40%, 0.7); background: linear-gradient(hsla(0, 0%, 40%, 0.7), rgba(50, 50, 50, 0.6)); }
+.mejsill__chapter-block .ch-title { font-weight: 700; margin: 0 0 3px; }
+.mejsill__chapter-block .ch-timespan,
+.mejsill__chapter-block .ch-title { font-size: 12px; display: block; white-space: nowrap; text-overflow: ellipsis; line-height: 12px; }
+.mejsill__chapter-block .ch-timespan { margin: 3px 0 4px; }
+.mejsill__captions-layer { position: absolute; bottom: 0; left: 0; text-align: center; line-height: 20px; font-size: 16px; color: #fff; }
+.mejsill__captions-layer a { color: #fff; text-decoration: underline; }
+.mejsill__captions-layer[lang=ar] { font-size: 20px; font-weight: 400; }
+.mejsill__captions-position { position: absolute; width: 100%; bottom: 15px; left: 0; }
+.mejsill__captions-position-hover { bottom: 35px; }
+.mejsill__captions-text { padding: 0; background: hsla(0, 0%, 8%, 0.5); white-space: pre-wrap; box-shadow: 5px 0 0 hsla(0, 0%, 8%, 0.5), -5px 0 0 hsla(0, 0%, 8%, 0.5); }
+.me-cannotplay a { color: #fff; font-weight: 700; }
+.me-cannotplay span { padding: 15px; display: block; }
+.mejsill__jump-forward-button { margin-right: 26px; width: 20px; }
+.mejsill__jump-forward-button > a,
+.mejsill__jump-forward-button > button { background: transparent; width: 12px; }
+.mejsill__jump-forward-button > a::after,
+.mejsill__jump-forward-button > button::after { position: absolute; top: 6px; left: 0; display: inline-block; content: ""; width: 0; height: 0; border-style: solid; border-width: 6px 0 6px 10px; border-color: transparent transparent transparent #fff; z-index: 1; }
+.mejsill__skip-back-button { margin-right: 37px; width: 20px; }
+.mejsill__skip-back-button > a,
+.mejsill__skip-back-button > button { background: transparent; width: 12px; }
+.mejsill__skip-back-button > a::after,
+.mejsill__skip-back-button > button::after { position: absolute; top: 6px; left: 0; display: inline-block; content: ""; width: 0; height: 0; border-style: solid; border-width: 6px 10px 6px 0; border-color: transparent #fff transparent transparent; z-index: 1; }
+.mejsill__speed-button { margin-right: 30px; position: relative; width: 48px; }
+.mejsill__speed-button > button { background: transparent; width: 48px; margin: 12px 0 0; font-size: 11px; font-weight: 700; line-height: normal; color: #fff; border: 1px solid #fff; border-radius: 12px; }
+.mejsill__speed-button > button:hover { border-width: 0; background-color: #00aced; }
+.mejsill__speed-selector { visibility: hidden; position: absolute; top: -100px; left: -6px; width: 60px; height: 100px; background: rgba(50, 50, 50, 0.7); border: 1px solid transparent; padding: 0; overflow: hidden; border-radius: 0; visibility: visible; }
+.mejsill__speed-selector fieldset { border: 0; padding: 0.01em 0 0; margin: 0; min-width: 0; }
+.mejsill__speed-selector legend { display: block; padding: 4px 0 0; margin: 0 0 6px; line-height: 15px; text-align: center; color: #fff; overflow: hidden; }
+body:not(:-moz-handler-blocked) .mejsill__speed-selector > fieldset { display: table-cell; }
+.mejsill__speed-selector-list { margin: 0; padding: 0; display: block; list-style-type: none !important; overflow: hidden; }
+.mejsill__speed-selector-list-item { margin: 0 0 6px; padding: 0 10px; list-style-type: none !important; display: block; color: #fff; overflow: hidden; }
+.mejsill__speed-selector-list-item:hover { background-color: #c8c8c8 !important; background-color: hsla(0, 0%, 100%, 0.4) !important; }
+.mejsill__speed-selector-input { clear: both; float: left; margin: 3px 3px 0 5px; position: absolute; left: -1000px; }
+.mejsill__speed-selector-label { width: 60px; float: left; padding: 4px 0 0; line-height: 15px; font-size: 11px; color: #fff; margin-left: 5px; cursor: pointer; }
+.mejsill__speed-selected { color: #21f8f8; }
+.mejsill__hdtoggle-button > a,
+.mejsill__hdtoggle-button > button { background-position: 0 -125px; }
+.mejsill__hdtoggle-disabled > a { background-position: 0 -175px; }
+.mejsill__hdtoggle-on > a,
+.mejsill__hdtoggle-on > button { background-position: 0 -150px; }
+.mejsill__download-button > a,
+.mejsill__download-button > button { background-position: 0 -50px; }
+.mejsill__help-button { position: relative; }
+.mejsill__help-button > button { background-position: 0 -200px; }
+.mejsill__help-button:hover > button { background-position: 0 -225px; }
+.mejsill__help-selector { visibility: hidden; position: absolute; top: -100px; left: -59px; width: 150px; height: 100px; background: rgba(50, 50, 50, 0.7); border: 1px solid transparent; padding: 0; overflow: hidden; border-radius: 0; visibility: visible; }
+.mejsill__help-selector-list { margin: 0; padding: 0; display: block; list-style-type: none !important; overflow: hidden; }
+.mejsill__help-selector-list-item { margin: 0 0 6px; padding: 0 10px; list-style-type: none !important; display: block; color: #fff; overflow: hidden; }
+.mejsill__help-selector-label { width: 100%; float: left; padding: 4px 0 0; line-height: 15px; font-size: 11px; color: #fff; margin-left: 5px; cursor: pointer; }
+.mejsill__help-selected { color: #21f8f8; }
