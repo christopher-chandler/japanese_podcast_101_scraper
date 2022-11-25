@@ -1,17 +1,20 @@
 # Standard
-import argparse
 import glob
-
 
 # Pip
 import requests
 from bs4 import BeautifulSoup as Bs
 
 # Custom
-from utils.args import args
-from utils.data_scraper import get_text_audio, get_tags, download_audio, get_title, data_prep
-
-data_prep()
+from utils.args_manager import args
+from utils.data_scraper import (
+    get_text_audio,
+    get_tags,
+    download_audio,
+    get_title,
+    data_prep,
+    move_audio
+)
 
 session = requests.Session()
 session.headers.update(
@@ -40,10 +43,10 @@ def run(page):
         anki_tags = f"{title_res} japanese_podcast_101"
     else:
         tag_res.append("japanese_podcast_101")
-        formatted_tags = [tag.replace(" ","_") for tag in tag_res]
+        formatted_tags = [tag.replace(" ", "_") for tag in tag_res]
         anki_tags = " ".join(formatted_tags)
 
-    download_audio(session, "dialog", title_res, dialog_res,tags=anki_tags)
+    download_audio(session, "dialog", title_res, dialog_res, tags=anki_tags)
     download_audio(session, "vocab_examples", title_res, vocab_res, tags=anki_tags)
 
 
@@ -58,3 +61,8 @@ if __name__ == "__main__":
         website = open(in_file, mode="r", encoding="utf-8").read()
         run(website)
 
+    if args.clear:
+        data_prep()
+
+    if args.move_audio:
+        move_audio()
