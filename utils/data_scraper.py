@@ -70,7 +70,7 @@ def download_audio(session, save_type, save_name, audio, tags):
 
 
 def move_audio():
-    source_folder = "/Users/christopherchandler/Github/Python/Jp101Scrapper/mp3_files" 
+    source_folder = "/Users/christopherchandler/Desktop/podcast_101_scraper/mp3_files"
     destination_folder = "/Users/christopherchandler/Library/Application Support/Anki2/Main Anki/collection.media"
     
     audio_file = [mp3 for mp3 in glob.iglob(f"{source_folder}/*.mp3")]
@@ -79,8 +79,7 @@ def move_audio():
 
         for mp3 in glob.iglob(f"{source_folder}/*.mp3"):
             old_file_destination = mp3.split("/")[-1]
-            new_file_destionation = f"{destination_folder}/{file}"
-
-            shutil.move(old_file_destination, new_file_destionation)
+            new_file_destination = f"{destination_folder}/{old_file_destination}"
+            shutil.move(mp3, new_file_destination)
     else: 
         print("There are no audio files to be moved. Check the mp3_files folder.")
