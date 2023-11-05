@@ -8,7 +8,7 @@ import sys
 # None
 
 
-def update_progress(progress, label:str):
+def update_progress(progress, label: str):
 
     # Modify this to change the length of the progress bar
     bar_length = 10
@@ -26,7 +26,8 @@ def update_progress(progress, label:str):
         status = "Done...\r\n"
     block = int(round(bar_length * progress))
 
-    text = "\r{3}: [{0}] {1}% {2}".format("#" * block + "-" * (bar_length - block),
-                                          progress * 100, status, label)
+    text = "\r{3}: [{0}] {1}% {2}".format(
+        "#" * block + "-" * (bar_length - block), progress * 100, status, label
+    )
     sys.stdout.write(text)
     sys.stdout.flush()

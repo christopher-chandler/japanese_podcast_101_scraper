@@ -13,7 +13,7 @@ from utils.data_scraper import (
     download_audio,
     get_title,
     data_prep,
-    move_audio
+    move_audio,
 )
 
 session = requests.Session()
