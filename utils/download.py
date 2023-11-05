@@ -7,7 +7,6 @@ i = 0
 
 for row in in_file:
 
-
     print(i,len(in_file))
     website = open(row, mode="r", encoding="utf-8").read()
     run(website)
