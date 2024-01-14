@@ -25,9 +25,9 @@ session.headers.update(
 )
 
 
-def run(page):
+def run(html_page):
 
-    soup = Bs(page, "html.parser")
+    soup = Bs(html_page, "html.parser")
 
     vocab = soup.findAll(class_="lsn3-lesson-vocabulary__td--recorder")
     dialog = soup.findAll(class_="lsn3-lesson-dialogue__td--recorder")
@@ -40,13 +40,18 @@ def run(page):
     title_res = get_title(title)
 
     if bool(tag_res) is False:
-        anki_tags = f"{title_res} japanese_podcast_101"
+        anki_tags = f"jp::{title_res} japanese_podcast_101"
+        #print(anki_tags)
+        pass 
     else:
-        tag_res.append("japanese_podcast_101")
+        tag_res.append("jp::japanese_podcast_101")
         formatted_tags = [tag.replace(" ", "_") for tag in tag_res]
         anki_tags = " ".join(formatted_tags)
-
+        
+     # Dialog audio
     download_audio(session, "dialog", title_res, dialog_res, tags=anki_tags)
+    
+    # Vocab audio 
     download_audio(session, "vocab_examples", title_res, vocab_res, tags=anki_tags)
 
 
@@ -57,7 +62,7 @@ if __name__ == "__main__":
         run(website)
 
     if args.automatic:
-        in_file = glob.glob("*.html")[0]
+        in_file = glob.glob("html/*.html")[0]
         website = open(in_file, mode="r", encoding="utf-8").read()
         run(website)
 

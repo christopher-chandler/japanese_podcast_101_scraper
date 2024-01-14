@@ -48,25 +48,27 @@ def get_title(title):
             return row.findAll()[0].getText().replace(" ", "_").lower()
 
 
-def download_audio(session, save_type, save_name, audio, tags):
+def download_audio(session, save_type, save_name, scrapped_audio, tags):
 
     with session:
         with open(
             "mp3_text/episode_results.csv", mode="a+", encoding="utf-8"
         ) as save_results:
             csv_writer = csv.writer(save_results)
+            
             c = 0
-            for entry in audio:
+
+            for mp3 in scrapped_audio:
                 c += 1
-                prog = c / len(audio)
+                prog = c / len(scrapped_audio)
                 update_progress(prog, save_type)
-                audio_file = session.get(audio.get(entry))
+                audio_file = session.get(scrapped_audio.get(mp3))
                 res_name = f"{save_type}_{save_name}_{c}"
                 save = open(f"mp3_files/{save_type}_{save_name}_{c}.mp3", mode="wb")
                 save.write(audio_file.content)
                 sound_name = f"[sound:{res_name}.mp3]"
 
-                csv_writer.writerow((entry, sound_name, tags))
+                csv_writer.writerow((mp3, sound_name, tags))
 
 
 def move_audio():
