@@ -77,3 +77,16 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Japanese Podcast 101 for providing valuable language learning resources.
 
 Please feel free to open issues or contribute to this project if you encounter any problems or have suggestions for improvements. Happy learning!
+
+
+# 📋 Disclaimer and known issues
+Any usage of the script is under user's responsibility only. Users of the script must act according to site's terms.
+
+As of today, Innovative Language's terms of use does not forbid usage of crawlers or scrapers on any of their sites. This may change in the future, so be aware.
+
+If you like the services Innovative Language provides you should consider a monthly subscription. Basic programs start at around $5 per month and include support from native speaker teachers.
+
+As with all websites, the site's structure may change in the future and thus, as often happens with scraping scripts, deprecate it. It is not really a question of if the site's source code will change but rather when (so enjoy it while it's still working 😁)
+
+# Similar projects 
+https://github.com/nedlir/languagepod101-scraper
