@@ -25,7 +25,7 @@ def update_progress(progress:float , label: str) -> None :
         None
 
 
-    based on https://stackoverflow.com/questions/3160699/python-progress-bar
+    based on https://stackoverflow.com/a/15860757
     """
     
     # Modify this to change the length of the progress bar
