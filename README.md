@@ -1,4 +1,4 @@
-# ReadMe
+# Japanese Podcast 101 scrapper
 This is a Python script for scraping audio content and metadata from the Japanese Podcast 101 website. It is designed to help you efficiently download audio files and prepare them for use in Anki, a popular spaced repetition flashcard program. The script utilizes web scraping techniques to extract data from the website and organize it for your learning needs.
 
 ## Prerequisites
@@ -13,8 +13,7 @@ Before using this script, make sure you have the following prerequisites install
 You can install the required packages using pip with the following commands:
 
 ```bash
-pip install requests
-pip install beautifulsoup4
+pip install -r requirements
 ```
 
 ## Getting Started
@@ -41,25 +40,27 @@ The script provides several options, which you can specify using command-line ar
 
 - `--move_audio`: This option moves the downloaded audio files to a designated folder.
 
+- `--file_path`: This option designate the folder for the audio files.
+
+
 ## How the Script Works
 
-The script uses web scraping to extract audio content and metadata from the Japanese Podcast 101 website. It does the following:
+The script uses web scraping to extract audio content and metadata from the Japanese Podcast 101 website. 
+It does the following:
 
 1. Downloads the webpage content from the specified HTML file.
-
 2. Parses the HTML using BeautifulSoup.
-
 3. Extracts audio content for vocabulary and dialogue sections.
-
 4. Retrieves tags associated with the content.
-
 5. Downloads audio files, naming them according to the title and tags.
-
 6. Organizes the audio files for use in Anki, creating appropriate tags.
 
 ## Example Usage
 
 Here's an example of how to use the script:
+
+You have to manually download the source code of the webpage and 
+then pass the respective file path to the argument. 
 
 ```bash
 python main.py --website path/to/your/website.html
@@ -79,14 +80,19 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 Please feel free to open issues or contribute to this project if you encounter any problems or have suggestions for improvements. Happy learning!
 
 
-# 📋 Disclaimer and known issues
-Any usage of the script is under user's responsibility only. Users of the script must act according to site's terms.
+# 📋 Disclaimer and Recognized Issues
+The script's usage is solely the responsibility of the user. Users must adhere to the site's terms.
 
-As of today, Innovative Language's terms of use does not forbid usage of crawlers or scrapers on any of their sites. This may change in the future, so be aware.
+As of the present date, Innovative Language's terms of use do not explicitly prohibit the use of crawlers or scrapers on any of their sites. However, this policy may change in the future, so users should stay informed.
 
-If you like the services Innovative Language provides you should consider a monthly subscription. Basic programs start at around $5 per month and include support from native speaker teachers.
+If you appreciate the services offered by Innovative Language, consider opting for a monthly subscription. Basic programs are available starting at approximately $5 per month, inclusive of support from native speaker teachers.
 
-As with all websites, the site's structure may change in the future and thus, as often happens with scraping scripts, deprecate it. It is not really a question of if the site's source code will change but rather when (so enjoy it while it's still working 😁)
+Like all websites, the site's structure may undergo changes in the future, potentially rendering scraping scripts obsolete. The likelihood of the site's source code evolving is not a matter of "if" but rather "when," so make the most of it while it still functions 😁.
+
+# 🔒 License
+The content featured on the websites belongs to the original creators (Innovative Language), and I disclaim any association with it.
+
+The license provided pertains solely to the script and not to the downloaded content.
 
 # Similar projects 
 https://github.com/nedlir/languagepod101-scraper

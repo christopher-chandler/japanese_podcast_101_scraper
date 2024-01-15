@@ -1,3 +1,4 @@
-requests
-beautifulsoup4
-genanki
+requests~=2.27.1
+beautifulsoup4~=4.11.1
+genanki~=0.13.0
+bs4~=0.0.1

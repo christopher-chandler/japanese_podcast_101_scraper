@@ -12,11 +12,11 @@ from utils.progress_bar import update_progress
 
 
 def data_prep():
-    open("mp3_text/episode_results.csv", mode="w+")
+    open("page_results/mp3_text/episode_results.csv", mode="w+")
     files = glob.glob("mp3_files/*.mp3")
     for f in files:
         os.remove(f)
-    os.remove("mp3_text/episode_results.csv")
+    os.remove("page_results/mp3_text/episode_results.csv")
 
 
 def get_text_audio(section: bs4.element.ResultSet) -> dict:
@@ -52,10 +52,10 @@ def download_audio(session, save_type, save_name, scrapped_audio, tags):
 
     with session:
         with open(
-            "mp3_text/episode_results.csv", mode="a+", encoding="utf-8"
+            "page_results/mp3_text/episode_results.csv", mode="a+", encoding="utf-8"
         ) as save_results:
             csv_writer = csv.writer(save_results)
-            
+
             c = 0
 
             for mp3 in scrapped_audio:
@@ -64,16 +64,17 @@ def download_audio(session, save_type, save_name, scrapped_audio, tags):
                 update_progress(prog, save_type)
                 audio_file = session.get(scrapped_audio.get(mp3))
                 res_name = f"{save_type}_{save_name}_{c}"
-                save = open(f"mp3_files/{save_type}_{save_name}_{c}.mp3", mode="wb")
+                save = open(
+                    f"page_results/mp3_files/{save_type}_{save_name}_{c}.mp3", mode="wb"
+                )
                 save.write(audio_file.content)
                 sound_name = f"[sound:{res_name}.mp3]"
 
                 csv_writer.writerow((mp3, sound_name, tags))
 
 
-def move_audio():
-    source_folder = "/Users/christopherchandler/Desktop/podcast_101_scraper/mp3_files"
-    destination_folder = "/Users/christopherchandler/Library/Application Support/Anki2/Main Anki/collection.media"
+def move_audio(destination_folder: str):
+    source_folder = "page_results/mp3_files"
 
     audio_file = [mp3 for mp3 in glob.iglob(f"{source_folder}/*.mp3")]
 

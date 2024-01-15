@@ -10,7 +10,8 @@ import sys
 
 import sys
 
-def update_progress(progress:float , label: str) -> None :
+
+def update_progress(progress: float, label: str) -> None:
     """
     Display a progress bar in the console.
 
@@ -20,14 +21,14 @@ def update_progress(progress:float , label: str) -> None :
 
     Raises:
         ValueError: If progress is not a float or is outside the range [0, 1].
-    
+
     Returns:
         None
 
 
     based on https://stackoverflow.com/a/15860757
     """
-    
+
     # Modify this to change the length of the progress bar
     bar_length = 10
     status = ""
@@ -51,6 +52,6 @@ def update_progress(progress:float , label: str) -> None :
     text = "\r{3}: [{0}] {1}% {2}".format(
         "#" * block + "-" * (bar_length - block), progress * 100, status, label
     )
-    
+
     sys.stdout.write(text)
     sys.stdout.flush()
