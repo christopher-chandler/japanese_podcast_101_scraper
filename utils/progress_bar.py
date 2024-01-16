@@ -8,9 +8,6 @@ import sys
 # None
 
 
-import sys
-
-
 def update_progress(progress: float, label: str) -> None:
     """
     Display a progress bar in the console.
