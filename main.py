@@ -42,8 +42,7 @@ def run(html_page) -> None:
 
     if bool(tag_res) is False:
         anki_tags = f"{title_res} japanese_podcast_101"
-        # print(anki_tags)
-        pass
+
     else:
         tag_res.append("jp::japanese_podcast_101")
         formatted_tags = [tag.replace(" ", "_") for tag in tag_res]

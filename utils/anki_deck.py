@@ -1,18 +1,23 @@
 # Standard Library
 import csv
+from glob import glob
 
 # Third-party
 import genanki
+
 
 # Custom
 # None
 
 
 def generate_anki_deck() -> None:
-
     # Read HTML templates
     FRONT = open("html_templates/front.html").read()
     BACK = open("html_templates/back.html").read()
+    CSS = open("html_templates/custom_css.css").read()
+
+    # MP3 Files
+    MP3 = glob("page_results/mp3_files/*.mp3")
 
     # Read CSV file
     RESULTS = csv.reader(
@@ -25,26 +30,45 @@ def generate_anki_deck() -> None:
         "Default",
         fields=[
             {"name": "Sentence"},
+            {"name": "Translation"},
+            {"name": "Definitions"},
+            {"name": "Target Word"},
+            {"name": "Focus Morph"},
+            {"name": "Screenshot"},
             {"name": "Sentence Audio"},
+            {"name": "Word Audio"},
+            {"name": "Notes"},
+            {"name": "Explanation"},
+            {"name": "Source Title Field"},
+            {"name": "Source URL Field"},
         ],
         templates=[
             {
-                "name": "Card 1",
+                "name": "Sentence Audio",
                 "qfmt": FRONT,
                 "afmt": BACK,
             }
         ],
+        css=CSS,
     )
 
     # Create Anki deck
-    default_deck = genanki.Deck(2059400110, "Default")
+    default_deck = genanki.Deck(2059400110, "Jp101")
 
     # Populate Anki deck with notes
     for row in RESULTS:
-        sentence, audio, tags = row[0], row[1], row[2]
+        sentence, sentence_audio, tags = row[0], row[1], row[2]
         anki_tags = ["jp::" + i for i in tags.split()]
-        note = genanki.Note(model=MODEL, fields=[sentence, audio], tags=anki_tags)
+
+        fields = ["" for i in range(12)]
+        fields[0] = sentence
+        fields[6] = sentence_audio
+
+        note = genanki.Note(model=MODEL, fields=fields, tags=anki_tags)
         default_deck.add_note(note)
 
     # Create Anki package and save to file
-    genanki.Package(default_deck).write_to_file("anki_folder/output.apkg")
+    anki_pkg = genanki.Package(default_deck)
+    anki_pkg.media_files = MP3
+
+    anki_pkg.write_to_file("anki_folder/output.apkg")
