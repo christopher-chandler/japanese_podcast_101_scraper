@@ -27,7 +27,7 @@ def generate_anki_deck() -> None:
     # Create Anki model
     MODEL = genanki.Model(
         1607392319,
-        "Default",
+        "Jp - Japanese Sentence Audio",
         fields=[
             {"name": "Sentence"},
             {"name": "Translation"},

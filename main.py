@@ -38,6 +38,7 @@ def run(html_page) -> None:
     dialog_res = get_text_audio(dialog)
     tag_res = get_tags(tags)
     title = soup.findAll(class_="r101-headline__cell-a")
+
     title_res = get_title(title)
 
     if bool(tag_res) is False:
