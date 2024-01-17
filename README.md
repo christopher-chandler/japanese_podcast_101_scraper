@@ -31,15 +31,10 @@ To get started with this script, follow these steps:
 ## Usage
 
 The script provides several options, which you can specify using command-line arguments:
-
 - `--website`: Specify the path to the HTML file from the Japanese Podcast 101 website. This option allows you to manually provide the HTML content to scrape.
-
 - `--automatic`: If you don't specify the `--website` argument, the script will automatically search for HTML files in the current directory and use the first one it finds for scraping.
-
 - `--clear`: Use this option to clean up any temporary data files created during the scraping process.
-
 - `--move_audio`: This option moves the downloaded audio files to a designated folder.
-
 - `--file_path`: This option designate the folder for the audio files.
 
 
@@ -73,11 +68,8 @@ This command will scrape the specified HTML file and download the audio content,
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
-
-- Special thanks to the developers of BeautifulSoup and the requests library for making web scraping and HTTP requests easier.
-- Japanese Podcast 101 for providing valuable language learning resources.
-
-Please feel free to open issues or contribute to this project if you encounter any problems or have suggestions for improvements. Happy learning!
+Please feel free to open issues or contribute to this project if you encounter 
+any problems or have suggestions for improvements. Happy learning!
 
 
 # 📋 Disclaimer and Recognized Issues
