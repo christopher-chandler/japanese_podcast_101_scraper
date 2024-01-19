@@ -3,13 +3,6 @@ This is a Python script for scraping audio content and metadata from the Japanes
 
 ## Prerequisites
 
-Before using this script, make sure you have the following prerequisites installed:
-
-- Python
-- Required Python packages (installable via pip):
-  - requests
-  - BeautifulSoup (imported as Bs in the script)
-
 You can install the required packages using pip with the following commands:
 
 ```bash
