@@ -58,7 +58,7 @@ def generate_anki_deck() -> None:
     # Populate Anki deck with notes
     for row in RESULTS:
         sentence, sentence_audio, tags = row[0], row[1], row[2]
-        anki_tags = ["jp::" + i for i in tags.split()]
+        anki_tags = [i for i in tags.split()]
 
         fields = ["" for i in range(12)]
         fields[0] = sentence

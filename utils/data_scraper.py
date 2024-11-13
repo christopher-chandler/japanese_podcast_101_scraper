@@ -40,7 +40,10 @@ def data_prep() -> None:
         os.remove(mp3)
 
     # CSV results
-    os.remove("page_results/mp3_text/episode_results.csv")
+    if os.path.exists("page_results/mp3_text/episode_results.csv"):
+        os.remove("page_results/mp3_text/episode_results.csv")
+    else:
+        open("page_results/mp3_text/episode_results.csv", "w")
 
 
 def get_text_audio(section: bs4.element.ResultSet) -> dict:
