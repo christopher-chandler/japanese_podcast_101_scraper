@@ -47,7 +47,7 @@ def run(html_page) -> None:
     else:
         header = "JA::podcast::JP101::"
         formatted_tags = [header + tag.replace(" ", "_") for tag in tag_res]
-
+        print(formatted_tags)
         anki_tags = " ".join(formatted_tags)
 
     # Dialog audio
